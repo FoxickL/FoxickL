@@ -14,21 +14,29 @@
             <button data-group=".page" data-target="page-3">page3</button>
         </div>
         <div class="header_second_part">
-            <a href="https://github.com/FoxickL"> <img  class="avatar" src="https://avatars.githubusercontent.com/u/242401088?s=400&u=d819ff9745089194e840ca8eb35482a55faa8da6&v=4" width="50px"></a>
+            <a href="https://github.com/FoxickL"> <img  class="avatar" src="https://avatars.githubusercontent.com/u/242401088?s=400&u=d819ff9745089194e840ca8eb35482a55faa8da6&v=4" width="50px" alt="тут должна быть ава"></a>
         </div>
     </header>
 
     <main>
         <div id="page-1" class="page">
-            <h1>Random neko art</h1>
+            <h1>Random anime art</h1>
             <div id="art"> 
                <h1 class="waiting">
-                Ожидание Нажатия
+                Waiting click
                </h1>
             </div>
             <div class="butt">
-                <button type="button" id="random_neko_art">random neko art</button>
+                <button type="button" id="random_neko_art">random anime art</button>
+                <select id="categories">
+                    <option value="" disabled selected>Category</option>
+                    <option value="husbando">husbando</option>
+                    <option value="kitsune">kitsune</option>
+                    <option value="neko">neko</option>
+                    <option value="waifu">waifu</option>
+                </select>
             </div>
+            
         </div>
         <div id="page-2" class="page">page2</div>
         <div id="page-3" class="page">page3</div>
@@ -36,17 +44,21 @@
 </body>
 </html>
 <script>
+let value 
+let url 
 let img = document.createElement('img')
     document.getElementById('random_neko_art').addEventListener('click',e=>{
-        api()
-        document.querySelector('.waiting').innerHTML = ''
-        document.getElementById('art').appendChild(img)
-        img.className = 'cat_arts'
+        if(url == undefined){
+            alert('Выбери категорию')   
+        }
+        else{
+            api()
+            document.querySelector('.waiting').innerHTML = ''
+            document.getElementById('art').appendChild(img)
+            img.className = 'cat_arts'
+            img.alt = ':( not loading'
+        }
     })
-
-
-
-
     document.querySelectorAll('button[data-group]').forEach(e=>{
         e.onclick = event =>{
             document.querySelectorAll(e.dataset.group).forEach(function(elem){
@@ -54,21 +66,21 @@ let img = document.createElement('img')
             })
         }
     })
+document.getElementById('categories').addEventListener('change',e=>{
+    value = document.getElementById('categories').value
+    url = `https://nekos.best/api/v2/${value}`
     
-
-
-
-let url = 'https://nekos.best/api/v2/neko'
-function api(){
-fetch(url)
- .then(response => response.json())
-  .then(data => {
-    console.log(data)
-    data.results.forEach(url => {
-        let url_neko = (url.url)
-        img.src = url_neko
-    });    
-  });
+})
+function api(){  
+    fetch(url)
+     .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        data.results.forEach(url => {
+            let url_neko = (url.url)
+            img.src = url_neko
+        })    
+      })
 }
     
     
