@@ -1,4 +1,4 @@
-const a = 
+ 
 class Secret{
     static arr = ['neko','waifu','trap'];
     
@@ -9,4 +9,4 @@ class Secret{
     }
 }
 
-eval(a)
+
