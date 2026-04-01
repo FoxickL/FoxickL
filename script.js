@@ -1,4 +1,3 @@
-
 const a = 
 class Secret{
     static arr = ['neko','waifu','trap'];
