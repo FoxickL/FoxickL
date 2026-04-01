@@ -1,5 +1,5 @@
 
-const a = `'class Secret{
+const a = 'class Secret{
     static arr = ['neko','waifu','trap'];
     
     static SecretAPI(index){
@@ -7,5 +7,5 @@ const a = `'class Secret{
         url = `https://api.waifu.pics/type/${category}`
     }
 }
-'` 
+'
 eval(a)
