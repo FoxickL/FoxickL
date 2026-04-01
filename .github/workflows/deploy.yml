@@ -1,46 +1,37 @@
-name: CI Replace Secrets
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch: # Позволяет запускать вручную для тестов
+    branches: [ main ] # Запускать при пуше в main
+
+permissions:
+  contents: write # Разрешение на запись, чтобы обновить сайт
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Replace secret placeholder
-        # Используем Python, так как он не ломается от спецсимволов в секретах
+      - name: Replace secret with Python
         env:
           MY_SECRET_VALUE: ${{ secrets.SECRET_CODE }}
         run: |
           python3 -c "
           import os
-          file_path = 'script.js'
-          
-          # Читаем файл
-          with open(file_path, 'r', encoding='utf-8') as f:
+          path = 'script.js'
+          with open(path, 'r', encoding='utf-8') as f:
               content = f.read()
-          
-          # Заменяем заглушку на значение из переменной окружения
-          secret = os.environ['MY_SECRET_VALUE']
-          new_content = content.replace('__SECRET_CODE__', secret)
-          
-          # Записываем обратно
-          with open(file_path, 'w', encoding='utf-8') as f:
+          # Заменяем __SECRET_CODE__ на значение из секретов
+          new_content = content.replace('__SECRET_CODE__', os.environ['MY_SECRET_VALUE'])
+          with open(path, 'w', encoding='utf-8') as f:
               f.write(new_content)
           "
 
-      - name: Check result
-        run: |
-          # Проверяем, осталась ли заглушка в файле (выдаст ошибку, если замена не прошла)
-          if grep -q "__SECRET_CODE__" script.js; then
-            echo "Ошибка: Заглушка всё ещё на месте!"
-            exit 1
-          else
-            echo "Успех: Замена выполнена корректно."
-          fi
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: . # Деплоим всё содержимое текущей папки
+          branch: gh-pages # Ветка, из которой работает ваш сайт
