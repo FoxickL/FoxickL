@@ -1,8 +1,9 @@
-name: Deploy and Replace Secret
+name: CI Replace Secrets
 
 on:
   push:
     branches: [ main ]
+  workflow_dispatch: # Позволяет запускать вручную для тестов
 
 jobs:
   build:
@@ -12,17 +13,34 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Replace secret placeholder in script.js
-        # Передаем секрет в переменную окружения, чтобы sed не "сломался" 
-        # от спецсимволов внутри самого секрета
+      - name: Replace secret placeholder
+        # Используем Python, так как он не ломается от спецсимволов в секретах
         env:
           MY_SECRET_VALUE: ${{ secrets.SECRET_CODE }}
         run: |
-          # Используем | вместо / в качестве разделителя, 
-          # так как в секретах часто встречаются слэши
-          sed -i "s|__SECRET_CODE__|$MY_SECRET_VALUE|g" script.js
+          python3 -c "
+          import os
+          file_path = 'script.js'
+          
+          # Читаем файл
+          with open(file_path, 'r', encoding='utf-8') as f:
+              content = f.read()
+          
+          # Заменяем заглушку на значение из переменной окружения
+          secret = os.environ['MY_SECRET_VALUE']
+          new_content = content.replace('__SECRET_CODE__', secret)
+          
+          # Записываем обратно
+          with open(file_path, 'w', encoding='utf-8') as f:
+              f.write(new_content)
+          "
 
-      - name: Verify (Optional)
+      - name: Check result
         run: |
-          # Проверяем, что заглушки больше нет (сам секрет в логах будет скрыт ***)
-          grep -q "__SECRET_CODE__" script.js && echo "Ошибка: замена не удалась" || echo "Успешно заменено"
+          # Проверяем, осталась ли заглушка в файле (выдаст ошибку, если замена не прошла)
+          if grep -q "__SECRET_CODE__" script.js; then
+            echo "Ошибка: Заглушка всё ещё на месте!"
+            exit 1
+          else
+            echo "Успех: Замена выполнена корректно."
+          fi
