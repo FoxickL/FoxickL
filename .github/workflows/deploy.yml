@@ -2,15 +2,14 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # Запускать при пуше в main
+    branches: [ main ]
 
 permissions:
-  contents: write # Разрешение на запись, чтобы обновить сайт
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,8 +23,11 @@ jobs:
           path = 'script.js'
           with open(path, 'r', encoding='utf-8') as f:
               content = f.read()
-          # Заменяем __SECRET_CODE__ на значение из секретов
-          new_content = content.replace('__SECRET_CODE__', os.environ['MY_SECRET_VALUE'])
+          
+          # Очищаем секрет от случайных кавычек по краям и заменяем
+          secret = os.environ['MY_SECRET_VALUE'].strip().strip('\'\"')
+          new_content = content.replace('__SECRET_CODE__', secret)
+          
           with open(path, 'w', encoding='utf-8') as f:
               f.write(new_content)
           "
@@ -33,5 +35,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: . # Деплоим всё содержимое текущей папки
-          branch: gh-pages # Ветка, из которой работает ваш сайт
+          folder: .
+          branch: gh-pages
