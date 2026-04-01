@@ -1,24 +1,5 @@
-name: Deploy Script with Secrets
-
-on:
-  push:
-    branches:
-      - main  # или название твоей главной ветки
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Inject Secret into script.js
-        run: |
-          # Заменяем заглушку __SECRET_CODE__ на значение из секретов репозитория
-          sed -i 's/__SECRET_CODE__/${{ secrets.SECRET_CODE }}/g' script.js
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: . # Папка, которую деплоим (обычно корень или dist)
-          branch: gh-pages # Ветка, куда уйдет готовый код
+- name: Replace secret
+  env:
+    MY_SECRET: ${{ secrets.SECRET_CODE }}
+  run: |
+    sed -i "s|__SECRET_CODE__|$MY_SECRET|g" script.js
