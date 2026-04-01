@@ -1,5 +1,28 @@
-- name: Replace secret
-  env:
-    MY_SECRET: ${{ secrets.SECRET_CODE }}
-  run: |
-    sed -i "s|__SECRET_CODE__|$MY_SECRET|g" script.js
+name: Deploy and Replace Secret
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Replace secret placeholder in script.js
+        # Передаем секрет в переменную окружения, чтобы sed не "сломался" 
+        # от спецсимволов внутри самого секрета
+        env:
+          MY_SECRET_VALUE: ${{ secrets.SECRET_CODE }}
+        run: |
+          # Используем | вместо / в качестве разделителя, 
+          # так как в секретах часто встречаются слэши
+          sed -i "s|__SECRET_CODE__|$MY_SECRET_VALUE|g" script.js
+
+      - name: Verify (Optional)
+        run: |
+          # Проверяем, что заглушки больше нет (сам секрет в логах будет скрыт ***)
+          grep -q "__SECRET_CODE__" script.js && echo "Ошибка: замена не удалась" || echo "Успешно заменено"
