@@ -7,4 +7,4 @@ const a =  class Secret{
         console.log(`в данный момент выбрана категория: ${category}`)
     }
 }
-enval(a)
+eval(a)
