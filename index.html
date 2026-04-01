@@ -77,26 +77,17 @@ function api(){
      .then(response => response.json())
       .then(data => {
         console.log(data)
-        data.results.forEach(url => {
-            let url_neko = (url.url)
-            img.src = url_neko
-        })    
+        if (data.url){
+            img.src = data.url
+        }   
+        else if (data){
+            data.results.forEach(url => {
+                let url_neko = (url.url)
+                img.src = url_neko
+            })
+        }
       })
 }
-    
-
-
-
-
-
-
-
-
-
-
-    
-
-
 </script>
 <script type="text/javascript" src="script.js"></script>
     
