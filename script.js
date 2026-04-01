@@ -1,2 +1,2 @@
-const a = __SECRET_CODE__
-eval(a)
+ __SECRET_CODE__
+
