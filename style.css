@@ -11,6 +11,8 @@
 
 body{
     background-color: bisque;
+    color: #796042;
+    font-family: 'Montserrat', sans-serif;
 }
 .avatar{
     border-radius: 100%;
@@ -20,7 +22,9 @@ header{
     height: 50px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #666;;
+    border-bottom: 2px;
+    border-color:burlywood ;
+    box-shadow: 2px 2px 5px burlywood;;
 }
 .header_first_part{
     display: flex;
@@ -34,6 +38,9 @@ header{
     border: none;
     background-color: transparent;
     cursor: pointer;
+    color: #796042;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 }
 .cat_arts{
     width: 600px;
@@ -45,7 +52,7 @@ main{
     display: flex;
     justify-content: space-evenly;
 }
-#page-1 h1{
+#page-3 h1{
     display:flex;
     justify-content: center;
 }
@@ -113,4 +120,35 @@ main{
 
 #categories:focus {
     border-color: #666;
+}
+#page-1 table{
+    width: 400px;
+    border-spacing:0px 20px;
+    border-collapse:separate;
+}
+#page-1 table td{
+    border-bottom:1px solid burlywood;
+    
+    padding: 10px 5px;
+    padding-left: 20px;
+    
+}
+#page-1 table td:first-child{
+    font-weight: 600;
+    width: 40%;
+}
+#page-1 h1{
+    width: 100%;
+    text-align: center;
+}
+#page-1 .content-page1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 2000px;
+    width: 2000px;
+    margin:0 auto;
+}
+#page-1{
+    font-size: 20px;
 }
