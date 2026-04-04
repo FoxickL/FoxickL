@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My home page</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="header_first_part">
-            <button data-group=".page" data-target="page-1">About me</button>
-            <button data-group=".page" data-target="page-2">My skills</button>
-            <button data-group=".page" data-target="page-3">Random neko art</button>
+            <button data-group=".page" data-target="page-1" data-lang="butt-about">About me</button>
+            <button data-group=".page" data-target="page-2" data-lang="butt-My-skills">My skills</button>
+            <button data-group=".page" data-target="page-3" data-lang="butt-neko">Random anime art</button>
+            <select id="language-change">
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+            </select>
+
         </div>
         <div class="header_second_part">
             <a href="https://github.com/FoxickL"> <img  class="avatar" src="https://avatars.githubusercontent.com/u/242401088?s=400&u=d819ff9745089194e840ca8eb35482a55faa8da6&v=4" width="50px" alt="тут должна быть ава"></a>
@@ -19,39 +24,38 @@
     </header>
 
     <main>
-        
         <div id="page-1" class="page show">
-            <h1>Info about me</h1>
+            <h1 data-lang="info">Info about me</h1>
             <div class="content-page1">
                 <table>
                     <tbody>
                         <tr>
-                            <td>My name</td>
-                            <td>Yaroslav</td>
+                            <td data-lang="name-label">My name</td>
+                            <td data-lang="name">Yaroslav</td>
                         </tr>
                         <tr>
-                            <td>Age</td>
+                            <td data-lang="age-label">Age</td>
                             <td>17</td>
                         </tr>
                         <tr>
-                            <td>Education</td>
-                            <td>secondary vocational/currently a student</td>
+                            <td data-lang="education-label">Education</td>
+                            <td data-lang="education">secondary vocational/currently a student</td>
                         </tr>
                         <tr>
-                            <td>Language</td>
-                            <td>Russian(native),English(B1)</td>
+                            <td data-lang="language-label">Language</td>
+                            <td data-lang="language">Russian(native),English(B1)</td>
                         </tr>
                         <tr>
-                            <td>Country</td>
-                            <td>Russian</td>
+                            <td data-lang="country-label">Country</td>
+                            <td data-lang="Country">Russian</td>
                         </tr>
                         <tr>
                             <td>Telegram</td>
                             <td>@Mytrixy</td>
                         </tr>
                         <tr>
-                            <td>Hobbies</td>
-                            <td>I like listening to music, playing games and studying</td>
+                            <td data-lang="hobbie-label">Hobbies</td>
+                            <td data-lang="hobbie">I like listening to music, playing games and studying</td>
                         </tr>
                     </tbody>
                 </table>
@@ -161,8 +165,10 @@ function api(){
         }
       })
 }
+
+
 </script>
 <script type="text/javascript" src="script.js"></script>
-
+<script type="text/javascript" src="language.js"></script>
 
 

@@ -101,7 +101,7 @@ main{
     margin-left: 10px;
 }
 
-#categories {
+#categories,#language-change {
     background-color: transparent;
     color: #444;
     border: 1.5px solid #444;
@@ -112,6 +112,11 @@ main{
     cursor: pointer;
     outline: none;
     transition: all 0.2s ease;
+}
+#language-change{
+    border: none;
+    color: #796042;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #categories:hover {
