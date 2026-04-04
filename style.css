@@ -121,34 +121,27 @@ main{
 #categories:focus {
     border-color: #666;
 }
-#page-1 table{
+#page-1 table,#page-2 table{
     width: 400px;
     border-spacing:0px 20px;
     border-collapse:separate;
 }
-#page-1 table td{
+#page-1 table td,#page-2 table td{
     border-bottom:1px solid burlywood;
     
     padding: 10px 5px;
     padding-left: 20px;
     
 }
-#page-1 table td:first-child{
+#page-1 table td:first-child,#page-2 table td:first-child{
     font-weight: 600;
     width: 40%;
 }
-#page-1 h1{
+#page-1 h1,#page-2 h1{
     width: 100%;
     text-align: center;
 }
-#page-1 .content-page1{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 2000px;
-    width: 2000px;
-    margin:0 auto;
-}
-#page-1{
+
+#page-1,#page-2{
     font-size: 20px;
 }
