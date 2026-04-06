@@ -43,7 +43,53 @@ const lang = {
         "go-learning":"Studying now",
         "waiting":"Waiting click",
         "category":"Category"
+    },
+    oldru:{
+        "info": "Вѣсть о мнѣ",
+        "name-label": "Имѧ моѥ",
+        "name": "Ꙗрославъ",
+        "age-label": "Лѣта",
+        "education-label": "Ꙋчєниѥ",
+        "education": "Срєднєє наказаниє / нынѣ оученикъ єсмь",
+        "language-label": "Ѩзыкъ",
+        "language": "Рѹсьскъ (рѡдный), Англїискъ (В1)",
+        "country-label": "Страна",
+        "country": "Рѡсїꙗ",
+        "hobbie-label": "Ȣтѣхи",
+        "hobbie": "Люблѹ послѹшати мѹсїкїю, играти игрища и оучитисѧ",
+        "butt-about": "Ѡ мнѣ",
+        "butt-My-skills": "Ȣмѣниꙗ моꙗ",
+        "butt-neko": "Слѹчайнъ ꙗпѡньскъ образъ",
+        "info-skills": "Вѣсть о мъıхъ оумѣниихъ",
+        "general-level": "Ѻбщїй стєпєнь",
+        "go-learning": "Нынѣ оучѹсѧ",
+        "waiting": "Чѧданїє клїка",
+        "category": "Родъ"
+    },
+    emoji:{
+        "info": "ℹ 🔃 👤",
+        "name-label": "👇 📛 ",
+        "name": "🇾🇦🇷🇴🇸🇱🇦🇻",
+        "age-label": "🧓",
+        "education-label": "🏫",
+        "education": "🏫 🏫 🏫/⏳ 👨‍🎓",
+        "language-label": "🇪🇸",
+        "language": "🇷🇺(🇦🇸),🇪🇸(B1⃣)",
+        "country-label": "🗺️🏞️🏘️",
+        "country": "🇷🇺🐻❄️🌲",
+        "hobbie-label": "🎨🎭📚⚽🎮🎵🧘‍♀️",
+        "hobbie": "🎧🎮📚💡😊",
+        "butt-about":"🙋‍♀️👤🤔✨",
+        "butt-My-skills":"🙋‍♀️👤🤔✨",
+        "butt-neko":"🎨🌸👧✨🍥🍜🍙🎎",
+        "info-skills":"🙋‍♀️🧠💪✨📚💻📈",
+        "general-level":"📊📈⚖️",
+        "go-learning":"📚🧑‍🎓💡🤔💻",
+        "waiting":"⏳🖱️🤔",
+        "category":"📚🏷️🤔"
     }
+    
+    
 }
 document.getElementById('language-change').addEventListener('change', e => {
     value = document.getElementById('categories').value
