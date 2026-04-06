@@ -80,13 +80,35 @@ const lang = {
         "hobbie-label": "🎨🎭📚⚽🎮🎵🧘‍♀️",
         "hobbie": "🎧🎮📚💡😊",
         "butt-about":"🙋‍♀️👤🤔✨",
-        "butt-My-skills":"🙋‍♀️👤🤔✨",
+        "butt-My-skills":"🙋‍♀️🧠💪✨📚💻📈",
         "butt-neko":"🎨🌸👧✨🍥🍜🍙🎎",
         "info-skills":"🙋‍♀️🧠💪✨📚💻📈",
         "general-level":"📊📈⚖️",
         "go-learning":"📚🧑‍🎓💡🤔💻",
         "waiting":"⏳🖱️🤔",
         "category":"📚🏷️🤔"
+    },
+    brail:{
+        "info": "⠊⠝⠋⠕⠗⠍⠁⠉⠊⠫ ⠕⠃⠕ ⠍⠝⠑",
+        "name-label": "⠍⠕⠑ ⠊⠍⠫",
+        "name": "⠫⠗⠕⠎⠇⠁⠺",
+        "age-label": "⠺⠕⠵⠗⠁⠎⠞",
+        "education-label": "⠕⠃⠗⠁⠵⠕⠺⠁⠝⠊⠑",
+        "education": "⠎⠗⠑⠙⠝⠑⠑ ⠏⠗⠕⠋⠑⠎⠎⠊⠕⠝⠁⠇⠾⠝⠕⠑ ⠕⠃⠗⠁⠵⠕⠺⠁⠝⠊⠑⠌⠺ ⠝⠁⠎⠞⠕⠫⠭⠑⠑ ⠺⠗⠑⠍⠫ ⠎⠞⠥⠙⠑⠝⠞",
+        "language-label": "⠫⠵⠮⠅",
+        "language": "⠗⠥⠎⠎⠅⠊⠯⠣⠗⠕⠙⠝⠕⠯⠜⠂⠁⠝⠛⠇⠊⠯⠎⠅⠊⠯⠣B⠼⠁⠜",
+        "country-label": "⠎⠞⠗⠁⠝⠁",
+        "country": "⠗⠕⠎⠎⠊⠫",
+        "hobbie-label": "⠓⠕⠃⠃⠊",
+        "hobbie": "⠫ ⠇⠳⠃⠇⠳ ⠎⠇⠥⠱⠁⠞⠾ ⠍⠥⠵⠮⠅⠥⠂⠊⠛⠗⠁⠞⠾ ⠺ ⠊⠛⠗⠮ ⠊ ⠥⠟⠊⠞⠎⠫",
+        "butt-about":"⠕⠃⠕ ⠍⠝⠑",
+        "butt-My-skills":"⠍⠕⠊ ⠝⠁⠺⠮⠅⠊",
+        "butt-neko":"⠎⠇⠥⠟⠁⠯⠝⠮⠯ ⠁⠝⠊⠍⠑ ⠁⠗⠞",
+        "info-skills":"⠍⠕⠊ ⠝⠁⠺⠮⠅⠊",
+        "general-level":"⠕⠃⠭⠊⠯ ⠥⠗⠕⠺⠑⠝⠾",
+        "go-learning":"⠎⠑⠯⠟⠁⠎ ⠥⠟⠥",
+        "waiting":"⠕⠚⠊⠙⠁⠝⠊⠑ ⠅⠇⠊⠅⠁",
+        "category":"⠅⠁⠞⠑⠛⠕⠗⠊⠫"
     }
     
     
