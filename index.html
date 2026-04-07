@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home-page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,14 +13,10 @@
             <button data-group=".page" data-target="page-2" data-lang="butt-My-skills">My skills</button>
             <button data-group=".page" data-target="page-3" data-lang="butt-neko">Random anime art</button>
             <select id="language-change">
-                <option value="en">English</option>
-                <option value="ru">Русский</option>
-                <option value="oldru">Словѣ́ньскъ ѩзꙑ́къ</option>
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+                <option value="oldru">OLDRU</option>
                 <option value="emoji">😊</option>
-                <option value="brail">brail</option>
-                
-                
-                
             </select>
 
         </div>
@@ -45,7 +41,7 @@
                         </tr>
                         <tr>
                             <td data-lang="education-label">Education</td>
-                            <td data-lang="education">secondary vocational/currently a student</td>
+                            <td data-lang="education">secondary vocational(currently a student)</td>
                         </tr>
                         <tr>
                             <td data-lang="language-label">Language</td>
@@ -105,23 +101,20 @@
             </div>
     </div>
     <div id="page-3" class="page">
-        <h1 data-lang="butt-neko">Random anime art</h1>
-            <div id="art"> 
-               <h1 class="waiting" data-lang="waiting">
-                Waiting click
-               </h1>
-            </div>
-            <div class="butt">
-                <button type="button" id="random_neko_art" data-lang="butt-neko">Random anime art</button>
+        <div class="butt">
                 <select id="categories">
-                    <option value="" disabled selected data-lang="category">Category</option>
+                    <option value="" disabled selected data-lang="category">Random</option>
                     <option value="husbando">husbando</option>
                     <option value="kitsune">kitsune</option>
                     <option value="neko">neko</option>
                     <option value="waifu">waifu</option>
                 </select>
             </div>
-
+            <div id="art"> 
+               <h1 class="waiting">
+                Waiting for click
+               </h1>
+            </div>
     </div>
     </main>
 </body>
@@ -131,9 +124,28 @@
 let value 
 let url 
 let img = document.createElement('img')
-    document.getElementById('random_neko_art').addEventListener('click',e=>{
-        if(url == undefined){
-            alert('Выбери категорию')   
+    document.getElementById('art').addEventListener('click',e=>{
+        let random_art = Math.floor(Math.random()*3)
+        
+        if(document.getElementById('categories').value == ""){
+            
+            
+            if(random_art == 0){
+                url = 'https://nekos.best/api/v2/neko'
+                api()
+            }  
+            else if(random_art==1){
+                url = 'https://nekos.best/api/v2/waifu'
+                api()
+            }
+            else{
+                url = 'https://nekos.best/api/v2/husbando'
+                api()
+            } 
+            document.querySelector('.waiting').innerHTML = ''
+            document.getElementById('art').appendChild(img)
+            img.className = 'cat_arts'
+            img.alt = ':( not loading'
         }
         else{
             api()
@@ -157,24 +169,16 @@ document.getElementById('categories').addEventListener('change',e=>{
 })
 function api(){  
     fetch(url)
-     .then(response => response.json())
-      .then(data => {
+    .then(response => response.json())
+    .then(data => {
         console.log(data)
-        if (data.url){
-            img.src = data.url
-        }   
-        else if (data){
-            data.results.forEach(url => {
-                let url_neko = (url.url)
-                img.src = url_neko
-            })
-        }
-      })
+        data.results.forEach(url => {
+            let url_neko = (url.url)
+            img.src = url_neko
+        })
+    })
 }
-
-
 </script>
-<script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="language.js"></script>
 
 

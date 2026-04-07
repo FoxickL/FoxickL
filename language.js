@@ -1,4 +1,3 @@
-
 const lang = {
     ru: {
         "info": "Информация обо мне",
@@ -6,7 +5,7 @@ const lang = {
         "name": "Ярослав",
         "age-label": "Возраст",
         "education-label": "Образование",
-        "education": "Среднее профессиональное образование/в настоящее время студент",
+        "education": "Среднее профессиональное образование(в настоящее время студент)",
         "language-label": "Язык",
         "language": "Русский(родной),Английский(B1)",
         "country-label": "Страна",
@@ -19,8 +18,6 @@ const lang = {
         "info-skills":"Мои навыки",
         "general-level":"Общий уровень",
         "go-learning":"Сейчас учу",
-        "waiting":"Ожидание клика",
-        "category":"Категория"
     },
     en:{
         "info": "Info about me",
@@ -28,7 +25,7 @@ const lang = {
         "name": "Yaroslav",
         "age-label": "Age",
         "education-label": "Education",
-        "education": "Secondary vocational/currently a student",
+        "education": "Secondary vocational(currently a student)",
         "language-label": "Language",
         "language": "Russian(native),English(B1)",
         "country-label": "Country",
@@ -41,8 +38,6 @@ const lang = {
         "info-skills":"Info about my skills",
         "general-level":"General level",
         "go-learning":"Studying now",
-        "waiting":"Waiting click",
-        "category":"Category"
     },
     oldru:{
         "info": "Вѣсть о мнѣ",
@@ -50,7 +45,7 @@ const lang = {
         "name": "Ꙗрославъ",
         "age-label": "Лѣта",
         "education-label": "Ꙋчєниѥ",
-        "education": "Срєднєє наказаниє / нынѣ оученикъ єсмь",
+        "education": "Срєднєє наказаниє (нынѣ оученикъ єсмь)",
         "language-label": "Ѩзыкъ",
         "language": "Рѹсьскъ (рѡдный), Англїискъ (В1)",
         "country-label": "Страна",
@@ -63,8 +58,6 @@ const lang = {
         "info-skills": "Вѣсть о мъıхъ оумѣниихъ",
         "general-level": "Ѻбщїй стєпєнь",
         "go-learning": "Нынѣ оучѹсѧ",
-        "waiting": "Чѧданїє клїка",
-        "category": "Родъ"
     },
     emoji:{
         "info": "ℹ 🔃 👤",
@@ -72,7 +65,7 @@ const lang = {
         "name": "🇾🇦🇷🇴🇸🇱🇦🇻",
         "age-label": "🧓",
         "education-label": "🏫",
-        "education": "🏫 🏫 🏫/⏳ 👨‍🎓",
+        "education": "🏫 🏫 🏫(⏳ 👨‍🎓)",
         "language-label": "🇪🇸",
         "language": "🇷🇺(🇦🇸),🇪🇸(B1⃣)",
         "country-label": "🗺️🏞️🏘️",
@@ -85,33 +78,7 @@ const lang = {
         "info-skills":"🙋‍♀️🧠💪✨📚💻📈",
         "general-level":"📊📈⚖️",
         "go-learning":"📚🧑‍🎓💡🤔💻",
-        "waiting":"⏳🖱️🤔",
-        "category":"📚🏷️🤔"
-    },
-    brail:{
-        "info": "⠊⠝⠋⠕⠗⠍⠁⠉⠊⠫ ⠕⠃⠕ ⠍⠝⠑",
-        "name-label": "⠍⠕⠑ ⠊⠍⠫",
-        "name": "⠫⠗⠕⠎⠇⠁⠺",
-        "age-label": "⠺⠕⠵⠗⠁⠎⠞",
-        "education-label": "⠕⠃⠗⠁⠵⠕⠺⠁⠝⠊⠑",
-        "education": "⠎⠗⠑⠙⠝⠑⠑ ⠏⠗⠕⠋⠑⠎⠎⠊⠕⠝⠁⠇⠾⠝⠕⠑ ⠕⠃⠗⠁⠵⠕⠺⠁⠝⠊⠑⠌⠺ ⠝⠁⠎⠞⠕⠫⠭⠑⠑ ⠺⠗⠑⠍⠫ ⠎⠞⠥⠙⠑⠝⠞",
-        "language-label": "⠫⠵⠮⠅",
-        "language": "⠗⠥⠎⠎⠅⠊⠯⠣⠗⠕⠙⠝⠕⠯⠜⠂⠁⠝⠛⠇⠊⠯⠎⠅⠊⠯⠣B⠼⠁⠜",
-        "country-label": "⠎⠞⠗⠁⠝⠁",
-        "country": "⠗⠕⠎⠎⠊⠫",
-        "hobbie-label": "⠓⠕⠃⠃⠊",
-        "hobbie": "⠫ ⠇⠳⠃⠇⠳ ⠎⠇⠥⠱⠁⠞⠾ ⠍⠥⠵⠮⠅⠥⠂⠊⠛⠗⠁⠞⠾ ⠺ ⠊⠛⠗⠮ ⠊ ⠥⠟⠊⠞⠎⠫",
-        "butt-about":"⠕⠃⠕ ⠍⠝⠑",
-        "butt-My-skills":"⠍⠕⠊ ⠝⠁⠺⠮⠅⠊",
-        "butt-neko":"⠎⠇⠥⠟⠁⠯⠝⠮⠯ ⠁⠝⠊⠍⠑ ⠁⠗⠞",
-        "info-skills":"⠍⠕⠊ ⠝⠁⠺⠮⠅⠊",
-        "general-level":"⠕⠃⠭⠊⠯ ⠥⠗⠕⠺⠑⠝⠾",
-        "go-learning":"⠎⠑⠯⠟⠁⠎ ⠥⠟⠥",
-        "waiting":"⠕⠚⠊⠙⠁⠝⠊⠑ ⠅⠇⠊⠅⠁",
-        "category":"⠅⠁⠞⠑⠛⠕⠗⠊⠫"
     }
-    
-    
 }
 document.getElementById('language-change').addEventListener('change', e => {
     value = document.getElementById('categories').value
