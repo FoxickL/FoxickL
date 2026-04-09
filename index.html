@@ -129,20 +129,15 @@ let img = document.createElement('img')
             let random_art = Math.floor(Math.random()*3)
             if(random_art == 0){
                 url = 'https://nekos.best/api/v2/neko'
-                
             }  
             else if(random_art==1){
                 url = 'https://nekos.best/api/v2/waifu'
-                
             }
             else{
-                url = 'https://nekos.best/api/v2/husbando'
-                
+                url = 'https://nekos.best/api/v2/husbando' 
             }
         }
     document.getElementById('art').addEventListener('click',e=>{
-        
-        
         if(document.getElementById('categories').value == ""){ 
             setRandom()
             api()
@@ -157,7 +152,6 @@ let img = document.createElement('img')
             document.getElementById('art').appendChild(img)
             img.className = 'cat_arts'
             img.alt = ':( not loading'
-            
         }
     })
     document.querySelectorAll('button[data-group]').forEach(e=>{
@@ -181,35 +175,38 @@ function api(){
             let url_neko = (url.url)
             img.src = url_neko
             history.push(url.url)
-            console.log(history)
             currentImage++
         })
     })
 }
 document.addEventListener('keydown',e=>{
-
-        if(e.key =='ArrowRight'){
-            if(currentImage == history.length -1){
-                api()
-                document.querySelector('.waiting').innerHTML = ''
-                document.getElementById('art').appendChild(img)
-                img.className = 'cat_arts'
-                img.alt = ':( not loading'
-               
-            }
-            else{
-                currentImage++;
-                img.src = history[currentImage]
-            }  
-        } 
-        if(e.key == 'ArrowLeft'){
-            if(currentImage == 0)return
-                currentImage--
-                img.src = history[currentImage]
+    if(e.key =='ArrowRight'){
+        if(document.getElementById('categories').value == ""){
+            setRandom()
+            api()
+            document.querySelector('.waiting').innerHTML = ''
+            document.getElementById('art').appendChild(img)
+            img.className = 'cat_arts'
+            img.alt = ':( not loading'
         }
-    
-    })
-    
+        else if(currentImage == history.length -1){
+            api()
+            document.querySelector('.waiting').innerHTML = ''
+            document.getElementById('art').appendChild(img)
+            img.className = 'cat_arts'
+            img.alt = ':( not loading'       
+        }
+        else{
+            currentImage++;
+            img.src = history[currentImage]
+        }  
+        } 
+    else if(e.key == 'ArrowLeft'){
+        if(currentImage == 0)return
+            currentImage--
+            img.src = history[currentImage]
+        }  
+}) 
 </script>
 <script type="text/javascript" src="language.js"></script>
 
